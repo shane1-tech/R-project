@@ -1,49 +1,38 @@
-# R Data Analysis Portfolio Project
+# 🏠 Boston Housing Price Prediction in R
 
-**Project Title:** (e.g., Customer Segmentation & Insights)  
-**Tools:** R (tidyverse, ggplot2, dplyr), RStudio  
-**Author:** Clinton Odhiambo  
-**Location:** Nairobi, Kenya
+This project applies **Multiple Linear Regression** in **R** to predict housing prices based on socioeconomic and structural features.
 
----
+## 📊 Objective
+Predict the **Median Value of Owner-Occupied Homes (MEDV)** using predictors such as:
+- Average number of rooms per dwelling (`RM`)
+- Percentage of lower status population (`LSTAT`)
+- Pupil–teacher ratio (`PTRATIO`)
 
-## 🧠 Project Overview  
-This project explores a dataset to uncover meaningful insights.  
-It covers:  
-- Data cleaning and transformation  
-- Exploratory data analysis (EDA)  
-- Visualisation of key trends  
-- (Optional) Basic modeling or segmentation  
+## 🧠 Techniques Used
+- Linear Regression Modeling
+- Correlation Analysis
+- Data Visualization with `ggplot2`
+- Model Evaluation (R², p-values, Residual Analysis)
 
----
+## 🗂️ Dataset
+The dataset (`Housing_Data.csv`) is based on the **Boston Housing Dataset** originally from UCI Machine Learning Repository.
 
-## 📋 Project Structure  
-- `Data/`: raw & cleaned datasets  
-- `R/`: all R scripts (cleaning, EDA, visualization)  
-- `Output/`: charts, tables, summary outputs  
-- `README.md`: this documentation  
+## 🧮 R Markdown Report
+All analysis steps are documented in the R Markdown file:
+`scripts/housing_regression.Rmd`
 
----
+To run it:
+```r
+rmarkdown::render("scripts/housing_regression.Rmd")
+```
 
-## 🔍 Key Insights & Highlights  
-- Insight 1: …  
-- Insight 2: …  
-- Visualization highlights: plot showing X vs Y, distribution of Z  
-*(Use actual findings once you run your analysis.)*
+## 📈 Key Insights
+- Houses with **more rooms (RM)** tend to have higher prices.
+- Higher **LSTAT** (lower status population) significantly reduces prices.
+- Higher **PTRATIO** (student–teacher ratio) lowers median home values.
 
----
+## 📈 Results
 
-## 🛠 Tools & Skills Demonstrated  
-- Data wrangling with `dplyr`, `tidyr`  
-- Visualisation with `ggplot2`  
-- Statistical summaries and grouping  
-- Clean, documented R scripts  
-- Project structure suitable for sharing on GitHub  
-
----
-
-## 📫 About Me  
-I am **Clinton Odhiambo**, a Statistician and Aspiring Data Analyst from Nairobi, Kenya.  
-I enjoy turning raw data into actionable insights using R, SQL, and Power BI.  
-**Email:** clinton.odhiambo@example.com  
-**LinkedIn:** [linkedin.com/in/clintonodhiambo](https://linkedin.com/in/clintonodhiambo)
+- Model explains ~74% of the variance in housing prices
+- `RM` (average number of rooms) has a strong positive correlation with `MEDV` (median home value)
+- `LSTAT` (lower status population) is negatively correlated with `MEDV`
